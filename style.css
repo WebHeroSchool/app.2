@@ -1,6 +1,7 @@
     body {
         margin: 0;
         font-family: "Roboto";
+        min-width: 375px;
     }
     
     a {
@@ -328,6 +329,7 @@
         width: 25px;
         height: 17px;
         cursor: pointer;
+        z-index: 2;
     }
     
     .burger__line {
@@ -361,16 +363,24 @@
     #checkbox_id:checked~.menu {
         display: flex;
         height: 100vh;
-        justify-content: space-around;
+        justify-content: start;
         flex-direction: column;
         position: absolute;
         width: 100%;
         z-index: 1;
         background: #fff;
+        top: 0px;
+        left: 0;
+        font-size: 30px;
     }
     
     #checkbox_id:checked~.menu>.menu__item {
-        color: red;
+        color: #000;
+        padding-bottom: 19px;
+    }
+    
+    #checkbox_id:checked~.menu>.menu__item:first-child {
+        padding-top: 182px;
     }
     /* анимация бургера */
     /* скрываем линию по середине */
@@ -392,7 +402,7 @@
         ;
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
         .burger {
             display: none;
         }
